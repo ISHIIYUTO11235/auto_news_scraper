@@ -1,2 +1,4 @@
 # auto_news_scraper
 自動的にG7加盟国からニュースをスクレイプし、ローカルLLM（ollama:mistral　量子化で軽量化されてるver）にとばしてすべて英訳し3点の箇条書きにしてディスコ―ドに飛ばすようにできています。SQLにニュースデータを溜めており、最終的には溜めたデータを研究に役立てる予定　ニュースに関するLLMのファインチューニングの材料にもなりうる。コードのpayload = {             "model": "mistral",             "prompt": f"{system_instruction}{text}",             "stream": False         }の部分をもっと高性能なLLMに変えればかなり実用的。
+
+It automatically scrapes news from G7 member countries, sends it to a local LLM (ollama:mistral, a lightweight version made lightweight by quantization), translates it all into English, creates a three-point list, and sends it to Discord. The news data is stored in SQL, and the plan is to ultimately use this data for research purposes; it could also be used as material for fine-tuning news-related LLMs. If you change the payload = { "model": "mistral", "prompt": f"{system_instruction}{text}", "stream": False } part of the code to a more powerful LLM, it will be quite practical.
